@@ -1,0 +1,14 @@
+on:
+  workflow_call:
+
+jobs:
+  do-curl:
+    runs-on: self-hosted
+
+    steps:
+      - name: Call API
+        run: |
+          curl -X POST \
+          # The -s flag makes curl silent (hides progress bar)
+          # The -S flag ensures errors are still shown
+          curl -sS https://jsonplaceholder.typicode.com/posts/1
