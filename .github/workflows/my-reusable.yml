@@ -6,4 +6,6 @@ jobs:
     steps:
       - name: Call API
         run: |
-          curl -sS https://jsonplaceholder.typicode.com/posts/1
+          response=$(curl -sS https://jsonplaceholder.typicode.com/posts/1)
+          echo "API Response:"
+          echo "$response"
